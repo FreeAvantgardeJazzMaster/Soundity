@@ -17,6 +17,13 @@ public class MidActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AnnouncementListActivity.class);
         startActivity(intent);
 
-        System.out.println("test on stage 2");
+        System.out.println("test on stage 2 - list");
+    }
+
+    public void showAddAnnouncement(View view){
+        Intent intent = new Intent(this, AddAnnouncement.class);
+        startActivity(intent);
+
+        System.out.println("test on stage 2 - add");
     }
 }
