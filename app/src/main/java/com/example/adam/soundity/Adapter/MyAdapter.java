@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 
 import com.bignerdranch.expandablerecyclerview.Adapter.ExpandableRecyclerAdapter;
 import com.bignerdranch.expandablerecyclerview.Model.ParentObject;
-import com.example.adam.soundity.Model.TitleChild;
-import com.example.adam.soundity.Model.TitleParent;
+import com.example.adam.soundity.ListModel.TitleChild;
+import com.example.adam.soundity.ListModel.TitleParent;
 import com.example.adam.soundity.R;
 import com.example.adam.soundity.ViewHolders.TitleChildViewHolder;
 import com.example.adam.soundity.ViewHolders.TitleParentViewHolder;

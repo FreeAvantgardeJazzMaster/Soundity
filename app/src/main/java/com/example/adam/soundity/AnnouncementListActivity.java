@@ -7,9 +7,9 @@ import android.support.v7.widget.RecyclerView;
 
 import com.bignerdranch.expandablerecyclerview.Model.ParentObject;
 import com.example.adam.soundity.Adapter.MyAdapter;
-import com.example.adam.soundity.Model.TitleChild;
-import com.example.adam.soundity.Model.TitleCreator;
-import com.example.adam.soundity.Model.TitleParent;
+import com.example.adam.soundity.ListModel.TitleChild;
+import com.example.adam.soundity.ListModel.TitleCreator;
+import com.example.adam.soundity.ListModel.TitleParent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,8 +45,7 @@ public class AnnouncementListActivity extends AppCompatActivity {
         List<ParentObject> parentObjects = new ArrayList<>();
         for (TitleParent title: titles) {
             List<Object> childList = new ArrayList<>();
-            childList.add(new TitleChild("Kamil", "Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!" +
-                    "See u at my garage!"));
+            childList.add(new TitleChild(title.getAnnouncement()));
             title.setChildObjectList(childList);
             parentObjects.add(title);
 

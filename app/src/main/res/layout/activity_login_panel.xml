@@ -45,8 +45,7 @@
         android:inputType="textPassword"
         android:textCursorDrawable="@null"
         android:backgroundTint="#FFFFFF"
-        android:textColor="#FFFFFF
-" />
+        android:textColor="#FFFFFF" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/signIn"
@@ -59,7 +58,7 @@
         android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
         app:cardCornerRadius="10dp"
-        android:onClick="showMidPanel"
+        android:onClick="logIn"
         >
         <RelativeLayout
             android:layout_width="match_parent"
@@ -83,6 +82,17 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
         android:text="Sign up now!" />
+
+    <TextView
+        android:id="@+id/loginError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="125dp"
+        android:textColor= "#fc2f2f"
+        android:visibility="invisible"
+        android:text="Incorrect username or password!" />
 
 
 </RelativeLayout>

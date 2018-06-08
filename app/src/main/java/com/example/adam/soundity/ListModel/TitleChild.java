@@ -1,13 +1,15 @@
-package com.example.adam.soundity.Model;
+package com.example.adam.soundity.ListModel;
+
+import com.example.adam.soundity.DataModel.Announcement;
 
 public class TitleChild{
 
     public String option1;
     public String option2;
 
-    public TitleChild(String option1, String option2) {
-        this.option1 = option1;
-        this.option2 = option2;
+    public TitleChild(Announcement announcement) {
+        this.option1 = announcement.getUsername();
+        this.option2 = announcement.getContent();
     }
 
     public String getOption1() {

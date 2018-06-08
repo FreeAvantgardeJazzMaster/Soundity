@@ -1,6 +1,7 @@
-package com.example.adam.soundity.Model;
+package com.example.adam.soundity.ListModel;
 
 import com.bignerdranch.expandablerecyclerview.Model.ParentObject;
+import com.example.adam.soundity.DataModel.Announcement;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,12 +14,14 @@ public class TitleParent implements ParentObject {
     private String title;
     private String instrument;
     private String level;
+    private Announcement announcement;
 
-    public TitleParent(String title, String instrument, String level) {
-        this.title = title;
+    public TitleParent(Announcement announcement) {
+        this.title = announcement.getGenre().getName();
         _id = UUID.randomUUID();
-        this.instrument = instrument;
-        this.level = level;
+        this.instrument = announcement.getInstrument();
+        this.level = announcement.getLevel().getName();
+        this.announcement = announcement;
     }
 
     public UUID get_id() {
@@ -61,5 +64,13 @@ public class TitleParent implements ParentObject {
 
     public void setLevel(String level) {
         this.level = level;
+    }
+
+    public Announcement getAnnouncement() {
+        return announcement;
+    }
+
+    public void setAnnouncement(Announcement announcement) {
+        this.announcement = announcement;
     }
 }
