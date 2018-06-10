@@ -2,13 +2,13 @@ package com.example.adam.soundity.ListModel;
 
 import com.example.adam.soundity.DataModel.Announcement;
 
-public class TitleChild{
+public class AnnouncementTitleChild {
 
     public String option1;
     public String option2;
     private int announcementID;
 
-    public TitleChild(Announcement announcement) {
+    public AnnouncementTitleChild(Announcement announcement) {
         this.option1 = announcement.getUsername();
         this.option2 = announcement.getContent();
         this.announcementID = announcement.getId();

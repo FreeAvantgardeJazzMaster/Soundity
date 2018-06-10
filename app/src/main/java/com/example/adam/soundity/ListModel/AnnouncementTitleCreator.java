@@ -9,28 +9,28 @@ import com.example.adam.soundity.Database.MockDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TitleCreator {
-    static  TitleCreator _titleCreator;
-    List<TitleParent> _titleParents;
+public class AnnouncementTitleCreator {
+    static AnnouncementTitleCreator _titleCreator;
+    List<AnnouncementTitleParent> _titleParents;
 
-    public TitleCreator(Context context){
+    public AnnouncementTitleCreator(Context context){
         _titleParents = new ArrayList<>();
 
         for (Announcement announcement : MockDatabase.getAnnouncements()){
             if (announcement.getUserId() != AppMemory.getCuurentUser().getId())
                 if (announcement.getLocation() == AppMemory.getCuurentUser().getLocation())
-                _titleParents.add(new TitleParent(announcement));
+                _titleParents.add(new AnnouncementTitleParent(announcement));
         }
     }
 
-    public static TitleCreator get(Context context){
+    public static AnnouncementTitleCreator get(Context context){
 
         //if (_titleCreator == null)
-            _titleCreator = new TitleCreator(context);
+            _titleCreator = new AnnouncementTitleCreator(context);
         return _titleCreator;
     }
 
-    public List<TitleParent> getAll() {
+    public List<AnnouncementTitleParent> getAll() {
         return _titleParents;
     }
 }

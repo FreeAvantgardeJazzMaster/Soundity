@@ -130,7 +130,7 @@
         android:layout_marginTop="254dp"
         android:clickable="true"
         android:foreground="?android:attr/selectableItemBackground"
-        android:onClick="showAnnouncementsList"
+        android:onClick="showMessages"
         app:cardBackgroundColor="#0059b3"
         app:cardCornerRadius="10dp">
 

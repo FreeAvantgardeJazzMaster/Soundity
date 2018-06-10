@@ -6,7 +6,7 @@ import com.example.adam.soundity.DataModel.Announcement;
 import java.util.List;
 import java.util.UUID;
 
-public class TitleParent implements ParentObject {
+public class AnnouncementTitleParent implements ParentObject {
 
 
     private List<Object> mChildrenList;
@@ -17,7 +17,7 @@ public class TitleParent implements ParentObject {
     private String location;
     private Announcement announcement;
 
-    public TitleParent(Announcement announcement) {
+    public AnnouncementTitleParent(Announcement announcement) {
         this.title = announcement.getGenre().getName();
         _id = UUID.randomUUID();
         this.instrument = announcement.getInstrument();

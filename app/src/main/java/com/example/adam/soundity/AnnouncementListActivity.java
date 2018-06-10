@@ -4,13 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.bignerdranch.expandablerecyclerview.Model.ParentObject;
-import com.example.adam.soundity.Adapter.MyAdapter;
-import com.example.adam.soundity.ListModel.TitleChild;
-import com.example.adam.soundity.ListModel.TitleCreator;
-import com.example.adam.soundity.ListModel.TitleParent;
+import com.example.adam.soundity.Adapter.AnnouncementListAdapter;
+import com.example.adam.soundity.ListModel.AnnouncementTitleChild;
+import com.example.adam.soundity.ListModel.AnnouncementTitleCreator;
+import com.example.adam.soundity.ListModel.AnnouncementTitleParent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +21,7 @@ public class AnnouncementListActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        ((MyAdapter) recyclerView.getAdapter()).onSaveInstanceState(outState);
+        ((AnnouncementListAdapter) recyclerView.getAdapter()).onSaveInstanceState(outState);
     }
 
     @Override
@@ -33,7 +32,7 @@ public class AnnouncementListActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.myRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        MyAdapter adapter = new MyAdapter(this, initData());
+        AnnouncementListAdapter adapter = new AnnouncementListAdapter(this, initData());
         adapter.setParentClickableViewAnimationDefaultDuration();
         adapter.setParentAndIconExpandOnClick(true);
 
@@ -41,12 +40,12 @@ public class AnnouncementListActivity extends AppCompatActivity {
     }
 
     private List<ParentObject> initData() {
-        TitleCreator titleCreator = TitleCreator.get(this);
-        List<TitleParent> titles = titleCreator.getAll();
+        AnnouncementTitleCreator titleCreator = AnnouncementTitleCreator.get(this);
+        List<AnnouncementTitleParent> titles = titleCreator.getAll();
         List<ParentObject> parentObjects = new ArrayList<>();
-        for (TitleParent title: titles) {
+        for (AnnouncementTitleParent title: titles) {
             List<Object> childList = new ArrayList<>();
-            childList.add(new TitleChild(title.getAnnouncement()));
+            childList.add(new AnnouncementTitleChild(title.getAnnouncement()));
             title.setChildObjectList(childList);
             parentObjects.add(title);
 

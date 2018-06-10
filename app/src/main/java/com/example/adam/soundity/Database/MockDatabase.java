@@ -51,7 +51,7 @@ public class MockDatabase {
         users.add(new User(userID.getAndIncrement(), "Dawid", "a", getLocationById(0)));
         users.add(new User(userID.getAndIncrement(), "Damian", "a", getLocationById(1)));
         users.add(new User(userID.getAndIncrement(), "Adam", "a", getLocationById(2)));
-        users.add(new User(userID.getAndIncrement(), "a", "a", getLocationById(3)));
+        users.add(new User(userID.getAndIncrement(), "a", "a", getLocationById(0)));
 
         announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(0), "Trumpet", getLevelById(0), 1, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!", getLocationById(0)));
         announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(1), "Guitar", getLevelById(1), 2, "Just need someone to play good with me. I'm not very demanding but you should be able to play lots od scales. by by",getLocationById(1)));
@@ -183,5 +183,14 @@ public class MockDatabase {
                 user.getReplies().add(reply);
             }
         }
+    }
+
+    public static List<Reply> getUserByIdReplies(int id){
+        for (User user : users){
+            if (user.getId() == id){
+                return user.getReplies();
+            }
+        }
+        return null;
     }
 }
