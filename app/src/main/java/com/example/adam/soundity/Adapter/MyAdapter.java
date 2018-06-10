@@ -43,6 +43,7 @@ public class MyAdapter extends ExpandableRecyclerAdapter<TitleParentViewHolder, 
         titleParentViewHolder._textView.setText(title.getTitle());
         titleParentViewHolder._instrument.setText(title.getInstrument());
         titleParentViewHolder._level.setText(title.getLevel());
+        titleParentViewHolder._location.setText(title.getLocation());
 
         switch (title.getLevel().toLowerCase()){
             case "low":
@@ -65,6 +66,6 @@ public class MyAdapter extends ExpandableRecyclerAdapter<TitleParentViewHolder, 
         TitleChild title = (TitleChild)o;
         titleChildViewHolder.option1.setText(title.getOption1());
         titleChildViewHolder.option2.setText(title.getOption2());
-
+        titleChildViewHolder.setAnnouncementID(title.getAnnouncementID());
     }
 }

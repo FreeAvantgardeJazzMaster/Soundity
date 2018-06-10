@@ -18,6 +18,7 @@ public class TitleCreator {
 
         for (Announcement announcement : MockDatabase.getAnnouncements()){
             if (announcement.getUserId() != AppMemory.getCuurentUser().getId())
+                if (announcement.getLocation() == AppMemory.getCuurentUser().getLocation())
                 _titleParents.add(new TitleParent(announcement));
         }
     }

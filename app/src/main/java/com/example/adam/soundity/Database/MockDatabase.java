@@ -4,6 +4,7 @@ import com.example.adam.soundity.DataModel.Announcement;
 import com.example.adam.soundity.DataModel.Genre;
 import com.example.adam.soundity.DataModel.Level;
 import com.example.adam.soundity.DataModel.Location;
+import com.example.adam.soundity.DataModel.Reply;
 import com.example.adam.soundity.DataModel.User;
 
 import java.util.ArrayList;
@@ -52,17 +53,17 @@ public class MockDatabase {
         users.add(new User(userID.getAndIncrement(), "Adam", "a", getLocationById(2)));
         users.add(new User(userID.getAndIncrement(), "a", "a", getLocationById(3)));
 
-        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(0), "Trumpet", getLevelById(0), 1, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!"));
-        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(1), "Guitar", getLevelById(1), 2, "Just need someone to play good with me. I'm not very demanding but you should be able to play lots od scales. by by"));
-        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(2), "Drums", getLevelById(2), 1, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!"));
-        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(3), "Piano", getLevelById(0), 0, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!"));
-        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(4), "Sax", getLevelById(0), 0, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!"));
-        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(5), "Vocal", getLevelById(3), 1, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!"));
-        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(6), "Synch", getLevelById(2), 2, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!"));
-        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(7), "Pots", getLevelById(1), 1, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!"));
-        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(0), "Bass", getLevelById(1), 1, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!"));
-        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(1), "Bass", getLevelById(1), 2, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!"));
-        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(2), "Drums", getLevelById(2), 0, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!"));
+        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(0), "Trumpet", getLevelById(0), 1, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!", getLocationById(0)));
+        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(1), "Guitar", getLevelById(1), 2, "Just need someone to play good with me. I'm not very demanding but you should be able to play lots od scales. by by",getLocationById(1)));
+        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(2), "Drums", getLevelById(2), 1, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!", getLocationById(4)));
+        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(3), "Piano", getLevelById(0), 0, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!", getLocationById(2)));
+        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(4), "Sax", getLevelById(0), 0, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!", getLocationById(1)));
+        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(5), "Vocal", getLevelById(3), 1, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!", getLocationById(1)));
+        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(6), "Synch", getLevelById(2), 2, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!", getLocationById(1)));
+        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(7), "Pots", getLevelById(1), 1, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!", getLocationById(2)));
+        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(0), "Bass", getLevelById(1), 1, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!", getLocationById(3)));
+        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(1), "Bass", getLevelById(1), 2, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!", getLocationById(2)));
+        announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(2), "Drums", getLevelById(2), 0, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!", getLocationById(3)));
     }
 
     private static Genre getGenreById(int id){
@@ -150,6 +151,15 @@ public class MockDatabase {
         return announcements;
     }
 
+    public static Announcement getAnnouncementByID(int id){
+        for (Announcement announcement : announcements){
+            if (announcement.getId() == id){
+                return announcement;
+            }
+        }
+        return null;
+    }
+
     public static void setAnnouncements(List<Announcement> announcements) {
         MockDatabase.announcements = announcements;
     }
@@ -165,5 +175,13 @@ public class MockDatabase {
     public static void addAnnouncement(Announcement announcement){
         announcement.setId(announcementID.getAndIncrement());
         announcements.add(announcement);
+    }
+
+    public static void addUserByIdReply(Reply reply, int id){
+        for (User user : users){
+            if (user.getId() == id){
+                user.getReplies().add(reply);
+            }
+        }
     }
 }

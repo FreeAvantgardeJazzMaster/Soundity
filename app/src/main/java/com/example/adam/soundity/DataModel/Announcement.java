@@ -11,9 +11,11 @@ public class Announcement {
     private int userId;
     private String content;
     private String username;
+    private Location location;
 
-    public Announcement(int id, Genre genre, String instrument, Level level, int userId, String content) {
+    public Announcement(int id, Genre genre, String instrument, Level level, int userId, String content, Location location) {
         this.id = id;
+        this.location = location;
         this.genre = genre;
         this.instrument = instrument;
         this.level = level;
@@ -76,5 +78,13 @@ public class Announcement {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 }

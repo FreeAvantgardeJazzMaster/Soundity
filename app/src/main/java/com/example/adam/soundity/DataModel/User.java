@@ -1,5 +1,8 @@
 package com.example.adam.soundity.DataModel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
 
     private int id;
@@ -9,6 +12,8 @@ public class User {
     private String password;
 
     private Location location;
+
+    private List<Reply> replies = new ArrayList<>();
 
     public User(int id, String username, String password, Location location) {
         this.id = id;
@@ -47,5 +52,13 @@ public class User {
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    public List<Reply> getReplies() {
+        return replies;
+    }
+
+    public void setReplies(List<Reply> replies) {
+        this.replies = replies;
     }
 }

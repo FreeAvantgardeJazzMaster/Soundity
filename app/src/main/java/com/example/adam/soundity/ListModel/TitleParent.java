@@ -14,6 +14,7 @@ public class TitleParent implements ParentObject {
     private String title;
     private String instrument;
     private String level;
+    private String location;
     private Announcement announcement;
 
     public TitleParent(Announcement announcement) {
@@ -21,6 +22,7 @@ public class TitleParent implements ParentObject {
         _id = UUID.randomUUID();
         this.instrument = announcement.getInstrument();
         this.level = announcement.getLevel().getName();
+        this.location = announcement.getLocation().getName();
         this.announcement = announcement;
     }
 
@@ -72,5 +74,13 @@ public class TitleParent implements ParentObject {
 
     public void setAnnouncement(Announcement announcement) {
         this.announcement = announcement;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

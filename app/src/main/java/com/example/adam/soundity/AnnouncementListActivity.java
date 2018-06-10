@@ -53,8 +53,4 @@ public class AnnouncementListActivity extends AppCompatActivity {
         }
         return parentObjects;
     }
-
-    public void interestOnClick(View view){
-
-    }
 }

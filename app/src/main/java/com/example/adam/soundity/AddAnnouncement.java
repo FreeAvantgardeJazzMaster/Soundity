@@ -23,6 +23,7 @@ public class AddAnnouncement extends AppCompatActivity {
     private Spinner genreSpinner ;
     private Spinner levelSpinner;
     private TextView name;
+    private TextView location;
     private EditText instrument;
     private EditText content;
 
@@ -67,7 +68,7 @@ public class AddAnnouncement extends AppCompatActivity {
         if (isAddFilled()){
             Genre genre = MockDatabase.getGenreByName(genreSpinner.getSelectedItem().toString());
             Level level = MockDatabase.getLevelByName(levelSpinner.getSelectedItem().toString());
-            MockDatabase.addAnnouncement(new Announcement(0, genre, instrument.getText().toString(), level, AppMemory.getCuurentUser().getId(), content.getText().toString()));
+            MockDatabase.addAnnouncement(new Announcement(0, genre, instrument.getText().toString(), level, AppMemory.getCuurentUser().getId(), content.getText().toString(), AppMemory.getCuurentUser().getLocation()));
 
             Intent intent = new Intent(this, MidActivity.class);
             startActivity(intent);
@@ -86,6 +87,8 @@ public class AddAnnouncement extends AppCompatActivity {
         levelSpinner.setAdapter(levelSpinnerAdapter);
 
         name.setText(AppMemory.getCuurentUser().getUsername());
+
+        location.setText(AppMemory.getCuurentUser().getLocation().getName());
     }
 
     private void initControls(){
@@ -94,6 +97,7 @@ public class AddAnnouncement extends AppCompatActivity {
         name = (TextView) findViewById(R.id.name);
         instrument = (EditText) findViewById(R.id.instrument);
         content = (EditText) findViewById(R.id.content);
+        location = (TextView) findViewById(R.id.locationTextView);
     }
 
     private boolean isAddFilled(){
@@ -105,5 +109,13 @@ public class AddAnnouncement extends AppCompatActivity {
             return false;
 
         return true;
+    }
+
+    public TextView getLocation() {
+        return location;
+    }
+
+    public void setLocation(TextView location) {
+        this.location = location;
     }
 }

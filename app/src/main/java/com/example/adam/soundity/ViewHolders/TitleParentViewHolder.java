@@ -13,6 +13,7 @@ public class TitleParentViewHolder extends ParentViewHolder{
     public TextView _instrument;
     public TextView _level;
     public ImageButton _imageButton;
+    public TextView _location;
 
     public TitleParentViewHolder(View itemView) {
         super(itemView);
@@ -20,6 +21,7 @@ public class TitleParentViewHolder extends ParentViewHolder{
         _instrument = (TextView) itemView.findViewById(R.id.parentInstrument);
         _level = (TextView) itemView.findViewById(R.id.parentLevel);
         _imageButton = (ImageButton) itemView.findViewById(R.id.expandArrow);
+        _location = (TextView) itemView.findViewById(R.id.locationTextView);
     }
 
 }

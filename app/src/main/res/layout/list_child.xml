@@ -35,15 +35,15 @@
             android:textSize="11sp" />
 
         <android.support.v7.widget.CardView
+            android:id="@+id/interestedButton"
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:layout_below="@+id/option2"
             android:layout_centerHorizontal="true"
-            app:cardBackgroundColor="#33a4af"
+            android:layout_margin="5dp"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            android:onClick="interestOnClick"
-            android:layout_margin="5dp">
+            app:cardBackgroundColor="#33a4af">
 
             <RelativeLayout
                 android:layout_width="match_parent"

@@ -16,6 +16,7 @@ public class MidActivity extends AppCompatActivity {
     public void showAnnouncementsList(View view){
         Intent intent = new Intent(this, AnnouncementListActivity.class);
         startActivity(intent);
+        System.out.println("here");
     }
 
     public void showAddAnnouncement(View view){
