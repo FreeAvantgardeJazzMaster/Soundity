@@ -3,6 +3,7 @@ package com.example.adam.soundity.Database;
 import com.example.adam.soundity.DataModel.Announcement;
 import com.example.adam.soundity.DataModel.Genre;
 import com.example.adam.soundity.DataModel.Level;
+import com.example.adam.soundity.DataModel.Location;
 import com.example.adam.soundity.DataModel.User;
 
 import java.util.ArrayList;
@@ -15,13 +16,22 @@ public class MockDatabase {
     private static List<User> users = new ArrayList<>();
     private static List<Genre> genres = new ArrayList<>();
     private static List<Level> levels = new ArrayList<>();
+    private static List<Location> locations = new ArrayList<>();
     private static AtomicInteger announcementID = new AtomicInteger();
     private static AtomicInteger genreID = new AtomicInteger();
     private static AtomicInteger levelID = new AtomicInteger();
     private static AtomicInteger userID = new AtomicInteger();
+    private static AtomicInteger locationID = new AtomicInteger();
 
 
     static{
+        locations.add(new Location(locationID.getAndIncrement(), "Poznań"));
+        locations.add(new Location(locationID.getAndIncrement(), "Gorzów Wielkopolski"));
+        locations.add(new Location(locationID.getAndIncrement(), "Koło"));
+        locations.add(new Location(locationID.getAndIncrement(), "Warszawa"));
+        locations.add(new Location(locationID.getAndIncrement(), "Wrocław"));
+        locations.add(new Location(locationID.getAndIncrement(), "Swarzędz"));
+
         genres.add(new Genre(genreID.getAndIncrement(), "Jazz"));
         genres.add(new Genre(genreID.getAndIncrement(), "Rock"));
         genres.add(new Genre(genreID.getAndIncrement(), "Alternative"));
@@ -37,10 +47,10 @@ public class MockDatabase {
         levels.add(new Level(levelID.getAndIncrement(), "HIGH"));
         levels.add(new Level(levelID.getAndIncrement(), "PRO"));
 
-        users.add(new User(userID.getAndIncrement(), "Dawid", "policja"));
-        users.add(new User(userID.getAndIncrement(), "admin", "admin"));
-        users.add(new User(userID.getAndIncrement(), "Damian", "policja"));
-        users.add(new User(userID.getAndIncrement(), "Adam", "policja"));
+        users.add(new User(userID.getAndIncrement(), "Dawid", "a", getLocationById(0)));
+        users.add(new User(userID.getAndIncrement(), "Damian", "a", getLocationById(1)));
+        users.add(new User(userID.getAndIncrement(), "Adam", "a", getLocationById(2)));
+        users.add(new User(userID.getAndIncrement(), "a", "a", getLocationById(3)));
 
         announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(0), "Trumpet", getLevelById(0), 1, "Hello, Hi there! I'm looking for someone who can play trumpet and is not afraid of social meetings with others. Just want to have fun, and take as much as possible!"));
         announcements.add(new Announcement(announcementID.getAndIncrement(), getGenreById(1), "Guitar", getLevelById(1), 2, "Just need someone to play good with me. I'm not very demanding but you should be able to play lots od scales. by by"));
@@ -89,6 +99,23 @@ public class MockDatabase {
 
     public static List<Genre> getGenres() {
         return genres;
+    }
+
+    public static List<String> getLocationsNames() {
+        List<String> list = new ArrayList<>();
+        for (Location location : locations){
+            list.add(location.getName());
+        }
+        return list;
+    }
+
+    public static Location getLocationById(int id){
+        for (Location location : locations){
+            if (location.getId() == id){
+                return location;
+            }
+        }
+        return null;
     }
 
     public static List<String> getGenresNames(){

@@ -42,6 +42,7 @@
             app:cardBackgroundColor="#33a4af"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="interestOnClick"
             android:layout_margin="5dp">
 
             <RelativeLayout

@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.bignerdranch.expandablerecyclerview.Model.ParentObject;
 import com.example.adam.soundity.Adapter.MyAdapter;
@@ -51,5 +52,9 @@ public class AnnouncementListActivity extends AppCompatActivity {
 
         }
         return parentObjects;
+    }
+
+    public void interestOnClick(View view){
+
     }
 }

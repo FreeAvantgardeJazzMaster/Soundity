@@ -8,10 +8,13 @@ public class User {
 
     private String password;
 
-    public User(int id, String username, String password) {
+    private Location location;
+
+    public User(int id, String username, String password, Location location) {
         this.id = id;
         this.username = username;
         this.password = password;
+        this.location = location;
     }
 
     public String getUsername() {
@@ -36,5 +39,13 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 }

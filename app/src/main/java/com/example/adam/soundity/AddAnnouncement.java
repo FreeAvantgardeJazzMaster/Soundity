@@ -1,5 +1,6 @@
 package com.example.adam.soundity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -67,6 +68,9 @@ public class AddAnnouncement extends AppCompatActivity {
             Genre genre = MockDatabase.getGenreByName(genreSpinner.getSelectedItem().toString());
             Level level = MockDatabase.getLevelByName(levelSpinner.getSelectedItem().toString());
             MockDatabase.addAnnouncement(new Announcement(0, genre, instrument.getText().toString(), level, AppMemory.getCuurentUser().getId(), content.getText().toString()));
+
+            Intent intent = new Intent(this, MidActivity.class);
+            startActivity(intent);
         }
     }
 

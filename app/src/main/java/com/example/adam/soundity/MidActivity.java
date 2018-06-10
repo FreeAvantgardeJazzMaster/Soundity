@@ -16,14 +16,15 @@ public class MidActivity extends AppCompatActivity {
     public void showAnnouncementsList(View view){
         Intent intent = new Intent(this, AnnouncementListActivity.class);
         startActivity(intent);
-
-        System.out.println("test on stage 2 - list");
     }
 
     public void showAddAnnouncement(View view){
         Intent intent = new Intent(this, AddAnnouncement.class);
         startActivity(intent);
+    }
 
-        System.out.println("test on stage 2 - add");
+    public void showSettings(View view){
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
     }
 }

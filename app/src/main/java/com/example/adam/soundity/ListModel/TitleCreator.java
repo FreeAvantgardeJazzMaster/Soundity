@@ -2,6 +2,7 @@ package com.example.adam.soundity.ListModel;
 
 import android.content.Context;
 
+import com.example.adam.soundity.AppMemory.AppMemory;
 import com.example.adam.soundity.DataModel.Announcement;
 import com.example.adam.soundity.Database.MockDatabase;
 
@@ -16,13 +17,14 @@ public class TitleCreator {
         _titleParents = new ArrayList<>();
 
         for (Announcement announcement : MockDatabase.getAnnouncements()){
-            _titleParents.add(new TitleParent(announcement));
+            if (announcement.getUserId() != AppMemory.getCuurentUser().getId())
+                _titleParents.add(new TitleParent(announcement));
         }
     }
 
     public static TitleCreator get(Context context){
 
-        if (_titleCreator == null)
+        //if (_titleCreator == null)
             _titleCreator = new TitleCreator(context);
         return _titleCreator;
     }
